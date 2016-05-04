@@ -65,6 +65,23 @@ p:last-child { margin-bottom: 0; }
     z-index: 1000;
 }
 
+.menu-select {
+  position: relative;
+  padding-left: 1.25em;
+}
+.menu-select:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 1em;
+  height: 0.15em;
+  background: white;
+  box-shadow: 
+    0 0.25em 0 0 white,
+    0 0.5em 0 0 white;
+}
+
 .navbar {
 	color: white;
 	font-size: 1em;
