@@ -30,7 +30,7 @@ p { line-height: 2; }
 
 p:last-child { margin-bottom: 0; }
 
-.tm-img { padding: 15px; }
+.tm-img { padding: 15px; max-height: 100%;}
 
 .tm-footer-text {
 	font-size: 0.9em;
