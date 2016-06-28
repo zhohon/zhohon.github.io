@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta charset="utf-8">
+    <title>考验智商的游戏</title>
+    <link rel="stylesheet" type="text/css" href="css/triangle.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+	<div id="results"></div>
+	<div id="timer" style="display:none">00</div>
+	<section id="content">
+        <div id="lvl" class="slideOut"></div>
+        <div id="ans" class="slideOut"></div>
+        <div id="cur" class="slideOut">Your Total: 0</div>
+        <div id="rules" class="slideOut">
+	        <img id="hideRules" src="images/close.png" />
+            <h1>The Rules</h1>
+            <p>#1: One selection on each row</p>
+            <p>#2: Each selection must be adjacent to the next</p>
+            <p>#3: Your "Current Total" must equal "The Answer"</p>
+            <p>#4: You must beat the timer on the right</p>
+        </div>
+        <div id="getRules" class="slideOut">Rules</div>
+        <div id="panel">
+                <div id="how" onClick="start(2)"> <img src="images/how.jpg" style="border:2px solid #000" /></div>
+        </div>
+	</section>
+    <!-- <audio id="click" preload="auto"><source src="sounds/click.ogg" type="audio/ogg" /><source src="sounds/click.mp3" /></audio> -->
+	<!-- <audio id="win" preload="auto"><source src="sounds/win.ogg" type="audio/ogg" /><source src="sounds/win.mp3" /></audio> -->
+	<!-- <audio id="lose" preload="auto"><source src="sounds/lose.ogg" type="audio/ogg" /><source src="sounds/lose.mp3" /></audio> -->
+	<script src="js/load.js"></script>
+</body>
+</html>
+
