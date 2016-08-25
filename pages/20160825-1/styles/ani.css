@@ -1,0 +1,388 @@
+@charset "utf-8";
+
+/* animation */
+@-webkit-keyframes fadein {
+    0% {
+        opacity: 0
+    }
+    20%{
+        opacity: 1;
+        top:200px;
+    }
+    100% {
+        top:0;
+        opacity: 1
+    }
+}
+@keyframes fadein {
+    0% {
+        opacity: 0
+    }
+    20%{
+        opacity: 1;
+        top:200px;
+    }
+    100% {
+        top:0;
+        opacity: 1
+    }
+}
+
+
+.fadein {
+    -webkit-animation-name:'fadein';
+    -webkit-animation-duration: 1.2s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-direction: alternate;
+
+    animation-name:'fadein';
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+
+}
+
+@-webkit-keyframes twinkle {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0.3
+    }
+    100% {
+        opacity: 1
+    }
+}
+@keyframes twinkle {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0.3
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+
+.arrow {
+    -webkit-animation-name:'twinkle';
+    -webkit-animation-duration: 1.2s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+
+    animation-name:'twinkle';
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    display:none;
+}
+
+
+
+
+@-webkit-keyframes light {
+    0% {
+        opacity: 0.4
+    }
+    50% {
+        opacity: 0.1
+    }
+    100% {
+        opacity: 0.4
+    }
+}
+@keyframes light {
+    0% {
+        opacity: 0.4
+    }
+    50% {
+        opacity: 0.1
+    }
+    100% {
+        opacity: 0.4
+    }
+}
+
+.aniLight{
+    animation:light 2s linear 0 infinite;
+    -webkit-animation:light 2s linear 0 infinite; /*Safari and Chrome*/
+}
+
+
+
+
+@-webkit-keyframes aniDoorLight1 {
+    0% {
+        top:200px;
+        opacity: 0.2
+    }
+    50% {
+        top:325px;
+        opacity: 0.8
+    }
+    100% {
+        top:450px;
+        opacity: 0.2
+    }
+}
+@keyframes aniDoorLight1 {
+    0% {
+        top:200px;
+        opacity: 0.2
+    }
+    50% {
+        top:355px;
+        opacity: 0.8
+    }
+    100% {
+        top:450px;
+        opacity: 0.2
+    }
+}
+
+.aniDoorLight1{
+    animation:aniDoorLight1 0.2s linear 0;
+    -webkit-animation:aniDoorLight1 0.2s linear 0;
+}
+
+
+
+@-webkit-keyframes aniDoorLight2 {
+    0% {
+        opacity: 0.2;
+        -webkit-transform: scale(0.2);
+    }
+    50% {
+        opacity: 0.8;
+        -webkit-transform: scale(1);
+    }
+    100% {
+        opacity: 0.2;
+        -webkit-transform: scale(1.5);
+    }
+}
+@keyframes aniDoorLight2 {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 0.2;
+        transform: scale(2);
+    }
+}
+
+.aniDoorLight2{
+    animation:aniDoorLight2 0.3s linear 0.10s;
+    -webkit-animation:aniDoorLight2 0.3s linear 0.10s;
+}
+
+
+@-webkit-keyframes aniLoadLight {
+    0% {
+        opacity: 0.1
+    }
+    70%{
+        opacity: 1.0
+    }
+    100% {
+        opacity: 1.0
+    }
+}
+@keyframes aniLoadLight {
+    0% {
+        opacity: 0.1
+    }
+    70%{
+        opacity: 1.0
+    }
+    100% {
+        opacity: 1.0
+    }
+}
+
+
+.aniLoadLight{
+    animation:aniLoadLight 1.5s linear 0s;
+    -webkit-animation:aniLoadLight 1.5s linear 0s;
+}
+
+
+.aniBgMask{
+    z-index: 100;
+    animation:aniLoadLight 1s linear 0s;
+    -webkit-animation:aniLoadLight 1s linear 0s;
+}
+
+
+@-webkit-keyframes aniLightBack {
+    0% {
+        opacity: 1.0
+    }
+    30%{
+        opacity: 1.0
+    }
+    100% {
+        opacity: 0.6
+    }
+}
+@keyframes aniLightBack {
+    0% {
+        opacity: 1.0;
+    }
+    30%{
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.aniGameBgMask{
+    z-index: 100;
+    animation:aniLightBack 0.5s linear 0s;
+    -webkit-animation:aniLightBack 0.5s linear 0s;
+}
+
+
+@-webkit-keyframes aniTimerOn {
+    0% {
+        opacity: 0.6;
+    }
+    50%{
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+@keyframes aniTimerOn {
+    0% {
+        opacity: 0.6;
+    }
+    50%{
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.aniTimerOn{
+    background:url('http://static.sdg-china.com/rxcq/pic/rxcqm_act/game20141117/game/bgTimeOn.png') no-repeat 0 0;
+    animation:aniTimerOn 1s linear 0s;
+    -webkit-animation:aniTimerOn 1s linear 0s;
+}
+
+
+
+@-webkit-keyframes aniWupinShow {
+    0% {
+        -webkit-transform: scale(0.1);
+        top:10px;
+    }
+    50%{
+        -webkit-transform: scale(1.0);
+        top:-10px;
+    }
+    60%{
+        top:5px;
+    }
+    70%{
+        top:-5px;
+    }
+    80%{
+        top:0px;
+    }
+    100% {
+        top:0px;
+    }
+}
+@keyframes aniWupinShow {
+    0% {
+        transform: scale(0.2);
+    }
+    50%{
+        transform: scale(2.0);
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+.aniWupinShow{
+    animation:aniWupinShow 0.8s ease-in 0s;
+    -webkit-animation:aniWupinShow 0.8s ease-in 0s;
+}
+
+
+@-webkit-keyframes aniScoreShow {
+    0% {
+        top:20px;
+        opacity: 0.5;
+    }
+    50%{
+        top:-20px;
+        opacity: 1.0;
+    }
+    100% {
+        top:-20px;
+        opacity: 1.0;
+    }
+}
+@keyframes aniScoreShow {
+    0% {
+        top:20px;
+        opacity: 0.5;
+    }
+    50%{
+        top:-20px;
+        opacity: 1.0;
+    }
+    100% {
+        top:-20px;
+        opacity: 1.0;
+    }
+}
+
+.aniScoreShow{
+    animation:aniScoreShow 0.5s linear 0.3s;
+    -webkit-animation:aniScoreShow 0.5s linear 0.3s;
+}
+
+
+@-webkit-keyframes mHand {
+    0% {
+        bottom:-110px;
+        right: -60px;
+    }
+    100% {
+        bottom:-60px;
+        right: -10px;
+    }
+}
+@keyframes mHand {
+    0% {
+        bottom:-110px;
+        right: -60px;
+    }
+    100% {
+        bottom:-60px;
+        right: -10px;
+    }
+}
+.mHand{
+    animation:mHand 1s linear 0s infinite;
+    -webkit-animation:mHand 1s linear infinite;
+}

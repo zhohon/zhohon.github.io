@@ -1,0 +1,504 @@
+﻿@charset "utf-8";
+/**
+ * CSS Resets
+ * @date 2014.11.11
+ * @author kidsj
+ * @mail kidsj1984@126.com
+ */
+/* resets */
+body, div, dl, dt, dd, ul, ol, menu, dir, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+fieldset, img {
+	border: 0;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style: normal;
+	font-weight: normal;
+}
+menu, dir, ol, ul {
+	list-style: none;
+}
+caption, th {
+	text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight:normal;
+	font-size: 100%;
+}
+q:before, q:after {
+	content: '';
+}
+/* tags */
+/** 移动端页面主体 **/
+body,
+html {
+	text-align: left;
+	width: 100%;
+	height:100%;
+	font-family: Roboto, HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: center;
+	background-color: #000;	
+}
+/**
+ * html 定义主文档
+ */
+html {
+}
+/**
+ * html 定义文档主体
+ */
+body {
+	font-family:"微软雅黑";
+	width: 640px;
+	margin:0 auto;
+	background-color: #212529;
+	box-shadow: 0 0 152px 0 #5c99e7;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	-moz-user-select:none;
+	-khtml-user-select:none;
+	user-select:none;
+}
+
+
+
+
+/**文本框**/
+textarea,
+input[type=password],
+input[type=text] {
+	resize: none;
+	outline: 0;
+	-webkit-appearance: none;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	background: #fff;
+	overflow: scroll;
+}
+
+/**
+ * a 定义超链接
+ */
+a {color:#C61130;text-decoration:none;}
+a:visited {}
+a:hover {text-decoration:underline;}
+a:active {}
+a:focus{outline:0;}
+
+/**清float**/
+.clearfix:after{display:table;content:" ";clear:both}
+.clearfix{*zoom:1}
+
+
+
+/**loading界面**/
+#load {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: url(images/load.gif);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 60px 60px;
+	background-color: #FFF;
+}
+
+
+
+
+
+
+
+
+/**
+ * div 定义文档分节区域(division/section)
+ */
+div {
+}
+/**
+ * span 定义行内文本区域
+ */
+span {
+}
+/**
+ * p 定义段落
+ */
+p {
+}
+/**
+ * h1-h6 定义标题
+ */
+h1 {
+}
+h2 {
+}
+h3 {
+}
+h4 {
+}
+h5 {
+}
+h6 {
+}
+/**
+ * abbr 定义单词缩写
+ * ex: <abbr title="etcetera">etc.</abbr>
+ */
+abbr {
+}
+/**
+ * acronym 定义短语、句子首字母缩写
+ * ex: <acronym title="Ivan Xu">IX</acronym>
+ */
+acronym {
+}
+/**
+ * address 定义地址，如电邮等
+ */
+address {
+}
+/**
+ * em 定义强调
+ */
+em {
+}
+/**
+ * strong 定义特别强调
+ */
+strong {
+}
+/**
+ * strike 定义删除文本
+ */
+strike {
+}
+/**
+ * pre 定义预格式化文本
+ */
+pre {
+}
+/**
+ * code 定义计算机代码文本
+ */
+code {
+}
+/**
+ * dfn 定义定义项目
+ */
+dfn {
+}
+/**
+ * samp 定义样本文本
+ */
+samp {
+}
+/**
+ * kbd 定义键盘键入文本
+ */
+kbd {
+}
+/**
+ * var 定义变量
+ */
+var {
+}
+/**
+ * cite 定义引用
+ */
+cite {
+}
+/**
+ * ins 定义插入文本
+ */
+ins {
+}
+/**
+ * del 定义被删除文本
+ */
+del {
+}
+/**
+ * blockquote 定义块引用
+ */
+blockquote {
+}
+/**
+ * sup 定义上标
+ */
+sup {
+}
+/**
+ * sub 定义下标
+ */
+sub {
+}
+/**
+ * b 定义粗体文本
+ */
+b {
+}
+/**
+ * i 定义斜体文本
+ */
+i {
+}
+/**
+ * u 定义下划线文本
+ */
+u {
+}
+/**
+ * tt 定义打印等宽字体
+ */
+tt {
+}
+/**
+ * big 定义大号字体
+ */
+big {
+}
+/**
+ * small 定义小号字体
+ */
+small {
+}
+/**
+ * q 定义简短行内引用
+ */
+q {
+}
+/**
+ * s 定义删除文本
+ */
+s {
+}
+/**
+ * br 定义换行符
+ */
+br {
+}
+/**
+ * hr 定义水平线
+ */
+hr {
+}
+/**
+ * center 定义水平居中
+ */
+center {
+}
+/**
+ * font 定义文本样式
+ */
+font {
+}
+/**
+ * caption 定义表格标题
+ */
+caption {
+}
+/**
+ * colgroup 定义表格列分组
+ */
+colgroup {
+}
+/**
+ * col 定义表格列
+ */
+col {
+}
+/**
+ * dl 定义定义列表
+ */
+dl {
+}
+/**
+ * dt 定义定义列表中的条目
+ */
+dt {
+}
+/**
+ * dd 定义定义条目中的定义部分
+ */
+dd {
+}
+/**
+ * ol 定义无序列表
+ */
+ul {
+}
+/**
+ * ol 定义有序列表
+ */
+ol {
+}
+/**
+ * dir 定义目录列表
+ */
+dir {
+}
+/**
+ * menu 定义菜单列表
+ */
+menu {
+}
+/**
+ * li 定义列表项目
+ */
+li {
+}
+/**
+ * form 定义输入表单
+ */
+form {
+}
+/**
+ * fieldset 定义表单分组
+ */
+fieldset {
+}
+/**
+ * legend 定义表单分组标题
+ */
+legend {
+}
+/**
+ * label 定义输入标注
+ */
+label {
+}
+
+/**
+ * button 定义按钮
+ */
+button {
+	font-size:12px;
+}
+/**
+ * input 定义用户输入组件
+ */
+input {
+	font-size:12px;
+}
+/**
+ * select 定义单选或多选列表
+ */
+select {
+	font-size:12px;
+}
+/**
+ * textarea 定义多行文本输入组件
+ */
+textarea {
+	font-size:12px;
+}
+/**
+ * table 定义表格
+ */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/**
+ * tbody 定义表格主体
+ */
+tbody {
+}
+/**
+ * thead 定义表格表头
+ */
+thead {
+}
+/**
+ * tfoot 定义表格页脚
+ */
+tfoot {
+}
+/**
+ * th 定义表格表头单元格
+ */
+th {
+}
+/**
+ * td 定义表格标准单元格
+ */
+td {
+}
+/**
+ * optgroup 定义选项组
+ */
+optgroup {
+}
+/**
+ * option 定义选项元素
+ */
+option {
+}
+/**
+ * img 定义图像
+ */
+img {
+}
+/**
+ * map 定义图像映射
+ */
+map {
+}
+/**
+ * area 定义图像映射热点
+ */
+area {
+}
+/**
+ * object 定义嵌入对象
+ */
+object {
+}
+/**
+ * param 定义嵌入对象设置
+ */
+param {
+}
+/**
+ * applet 定义嵌入Java Applet
+ */
+applet {
+}
+/**
+ * iframe 定义文档内联框架
+ */
+iframe {
+}
+/**
+ * frameset 定义框架集
+ */
+frameset {
+}
+/**
+ * frame 定义框架集中的一个窗口
+ */
+frame {
+}
+/**
+ * noframes 定义不支持框架所显示的内容
+ */
+noframes {
+}
+/**
+ * script 定义客户端脚本
+ */
+script {
+}
+/**
+ * noscript 定义脚本未运行所显示的内容
+ */
+noscript {
+}

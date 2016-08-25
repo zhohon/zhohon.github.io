@@ -1,0 +1,163 @@
+<html>
+<HEAD>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=640,user-scalable=no" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <title>传奇烧猪游戏</title>
+
+    <link rel="stylesheet" type="text/css" href="styles/index.css?v=0.3.2"/>
+    <link rel="stylesheet" type="text/css" href="styles/ani.css?v=0.3.2"/>
+
+
+    <style type="text/css">
+
+
+
+
+
+    </style>
+
+
+
+</head>
+<body>
+<div class="loading" id="loading">
+    <div class="pageLoad">
+        <p><em id="loadingBg"></em></p>
+        <span id="loadingSpan">正在加载中...</span>
+    </div>
+</div>
+<div id="audioControl"></div>
+
+<audio id="audioAuto" style="display: none;" preload="auto" autoplay="autoplay" loop="loop">   <source src="http://static.sdg-china.com/rxcq/pic/rxcqm_act/game20141117/music/login.mp3"></audio>
+
+<!--<audio id="audioHuo" src="http://static.sdg-china.com/rxcq/pic/rxcqm_act/game20141117/music/mp3_huo.mp3" controls="controls" style="display: none;" preload="auto">-->
+    <!--Your browser does not support the audio element.-->
+<!--</audio>-->
+
+<!--<audio id="audioBing" src="http://static.sdg-china.com/rxcq/pic/rxcqm_act/game20141117/music/mp3_bing.mp3" controls="controls" style="display: none;" preload="auto">-->
+    <!--Your browser does not support the audio element.-->
+<!--</audio>-->
+
+<!--<audio id="audioOpen" src="http://static.sdg-china.com/rxcq/pic/rxcqm_act/game20141117/music/mp3_open.mp3" controls="controls" style="display: none;" preload="auto">-->
+    <!--Your browser does not support the audio element.-->
+<!--</audio>-->
+
+
+<div class="bgMask"></div>
+<div id="doorWrap" class="wrapper">
+    <div id="step1" class="step">
+        <div class="bgAni">
+            <img src="http://static.sdg-china.com/rxcq/pic/rxcqm_act/game20141117/index/bg2.jpg" class="bg"/>
+        </div>
+        <div class="openLoad"><img src="http://static.sdg-china.com/rxcq/pic/rxcqm_act/game20141117/index/openLoading1.png"/></div>
+
+        <div id="btnEnter">
+            <em class="aniLight"></em>
+        </div>
+
+        <div class="fire1 aniLight"></div>
+        <div class="fire2 aniLight"></div>
+
+        <div class="doorLight1"></div>
+        <div class="doorLight2"></div>
+
+        <div class="openLoadLight"></div>
+    </div>
+    <div id="timeBar"></div>
+</div>
+
+
+
+<div id="gameWrap" class="wrapper">
+    <div class="gameBgMask"></div>
+    <div class="header">
+        <div class="timer"></div>
+        <div class="timerNum">1秒</div>
+    </div>
+    <div class="score">
+        0
+    </div>
+
+    <section id="sectionTest" class="gameSection hasPic" rid="0" showtime="0">
+        <div class="mbg" style="background-image: url(http://static.sdg-china.com/rxcq/pic/rxcqm_act/game20141117/game/GWA_1.png);"></div>
+        <div class="mName"></div>
+        <div class="mHand"></div>
+    </section>
+    <div id="testMsg">请打击此怪</div>
+
+
+    <div class="main">
+        <section id="section1" class="gameSection">
+            <div class="mbg"></div>
+            <div class="mName"></div>
+            <div class="mScore"></div>
+        </section>
+        <section id="section2" class="gameSection">
+            <div class="mbg"></div>
+            <div class="mName"></div>
+            <div class="mScore"></div>
+        </section>
+        <section id="section3" class="gameSection">
+            <div class="mbg"></div>
+            <div class="mName"></div>
+            <div class="mScore"></div>
+        </section>
+        <section id="section4" class="gameSection">
+            <div class="mbg"></div>
+            <div class="mName"></div>
+            <div class="mScore"></div>
+        </section>
+        <section id="section5" class="gameSection">
+            <div class="mbg"></div>
+            <div class="mName"></div>
+            <div class="mScore"></div>
+        </section>
+        <section id="section6" class="gameSection">
+            <div class="mbg"></div>
+            <div class="mName"></div>
+            <div class="mScore"></div>
+        </section>
+
+        <!--<div class="btnSkill">-->
+            <!--<div class="bg"></div>-->
+        <!--</div>-->
+
+        <div class="allWupin"></div>
+        <div class="fireWall">
+            <img src="http://static.sdg-china.com/rxcq/pic/rxcqm_act/game20141117/game/aniFrost1.png"/>
+        </div>
+    </div>
+
+
+    <div class="gameOverlay"></div>
+    <div class="shareWrap">
+        <div class="c"><span id="shareScore" class="h h2">0</span> 分,<span id="shareWu1" class="h">????</span>,<span id="shareWu2" class="h">????</span>,</div>
+        <div class="c">
+            <span id="shareWu3" class="h">????</span>,<span id="shareWu4" class="h">????</span>,<span id="shareWu5" class="h">????</span>,<span id="shareWu6" class="h">????</span>,
+        </div>
+        <div class="c">成功超越了<span id="sharePercent" class="h h2">0%</span>的玩家</div>
+        <div class="c">您的刷怪技巧已经<span id="shareLevel"  class="h">????</span></div>
+        <div class="btn">
+            <a href="javascript:void(0)" class="btnAgain">再烧一次</a>
+            <a href="javascript:void(0)" class="btnShare">分享游戏</a>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+<script src="http://static.sdg-china.com/copyright/js/base/zepto.min.js"></script>
+<script type="text/javascript" src="scripts/touch-0.2.14.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="scripts/index.js?v=0.3.2" charset="utf-8"></script>
+<script type="text/javascript" src="scripts/game.js?v=0.3.2" charset="utf-8"></script>
+</body>
+</html>
+
