@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>恋爱计时器</title>
+    <title>小红记着呢</title>
     <style>
         body {
             -webkit-font-smoothing: antialiased;
@@ -44,7 +44,7 @@
 
 <body>
     <div class="content">
-        <h2>呆呆，我们已经在一起了</h2>
+        <h2>哈妹，距离第一次见面已经</h2>
         <div class="timer">
             <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
         </div>
@@ -52,7 +52,7 @@
 
     <script>
         function timer() {
-            var start = new Date(2013, 12, 1); // 2015.7.2
+            var start = new Date(2018, 6, 8); // 2015.7.2
             var t = new Date() - start;
             var h = ~~(t / 1000 / 60 / 60 % 24);
             if (h < 10) {
