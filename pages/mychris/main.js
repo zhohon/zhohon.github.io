@@ -92,7 +92,6 @@
                     }, 1200);
                 }
                 start.addEventListener("click", startGame, false)
-                start.addEventListener("touchend", startGame, false)
             });
         }
 
