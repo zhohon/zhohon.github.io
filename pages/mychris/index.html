@@ -1,54 +1,119 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <title>Cocos Creator | myChrismas</title>
+    <title>Cocos Creator | myChrismas</title>
 
-  <!--http://www.html5rocks.com/en/mobile/mobifying/-->
-  <meta name="viewport"
-        content="width=device-width,user-scalable=no,initial-scale=1, minimum-scale=1,maximum-scale=1"/>
+    <!--http://www.html5rocks.com/en/mobile/mobifying/-->
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1, minimum-scale=1,maximum-scale=1" />
 
-  <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="format-detection" content="telephone=no">
+    <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
 
-  <!-- force webkit on 360 -->
-  <meta name="renderer" content="webkit"/>
-  <meta name="force-rendering" content="webkit"/>
-  <!-- force edge on IE -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <meta name="msapplication-tap-highlight" content="no">
+    <!-- force webkit on 360 -->
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <!-- force edge on IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="msapplication-tap-highlight" content="no">
 
-  <!-- force full screen on some browser -->
-  <meta name="full-screen" content="yes"/>
-  <meta name="x5-fullscreen" content="true"/>
-  <meta name="360-fullscreen" content="true"/>
-  
-  <!-- force screen orientation on some browser -->
-  <meta name="screen-orientation" content="portrait"/>
-  <meta name="x5-orientation" content="portrait">
+    <!-- force full screen on some browser -->
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
 
-  <!--fix fireball/issues/3568 -->
-  <!--<meta name="browsermode" content="application">-->
-  <meta name="x5-page-mode" content="app">
+    <!-- force screen orientation on some browser -->
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-orientation" content="portrait">
 
-  <!--<link rel="apple-touch-icon" href=".png" />-->
-  <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
+    <!--fix fireball/issues/3568 -->
+    <!--<meta name="browsermode" content="application">-->
+    <meta name="x5-page-mode" content="app">
 
-  <link rel="stylesheet" type="text/css" href="style-mobile.css"/>
+    <!--<link rel="apple-touch-icon" href=".png" />-->
+    <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
+
+    <link rel="stylesheet" type="text/css" href="style-mobile.css" />
+    <style>
+        #main-splash {
+            background: url(./loading.png) no-repeat center;
+            background-size: auto 400px;
+            position: absolute;
+            width: 100%;
+            height: 83%;
+            min-height: 200px;
+            top: 5px;
+        }
+        
+        #splash {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #FFF
+        }
+        
+        .progress-bar img {
+            width: 90px;
+            height: auto;
+            margin-top: -30px;
+            margin-left: -40px;
+            position: absolute;
+            transition: left .3s ease-in-out;
+        }
+        
+        .start-btn {
+            background-color: #000;
+            position: absolute;
+            left: 30%;
+            top: 87%;
+            height: 34px;
+            width: 40%;
+            border-radius: 34px;
+            line-height: 34px;
+            color: white;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: opacity 0.25s;
+            transition-delay: 0.3s;
+            opacity: 0;
+        }
+        
+        .progress-bar {
+            background-color: #e4e4e4;
+            position: absolute;
+            left: 20%;
+            top: 90%;
+            height: 6px;
+            padding: 0;
+            width: 60%;
+            border-radius: 6px;
+            transition: opacity 0.25s;
+        }
+    </style>
 
 </head>
-<body>
-  <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
-  <div id="splash">
-    <div class="progress-bar stripes">
-      <span style="width: 0%"></span>
-    </div>
-  </div>
-<script src="src/settings.js" charset="utf-8"></script>
 
-<script src="main.js" charset="utf-8"></script>
+<body>
+    <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
+    <div id="splash">
+        <div id="main-splash"></div>
+        <div class="progress-bar stripes" id="loading">
+            <img id="loading_dog" src="./loading_dog.gif" alt="" style="left: 0;">
+            <span style="width: 0%"></span>
+        </div>
+        <button class="start-btn" id="start-game">
+                START
+            </button>
+    </div>
+    <script src="src/settings.js" charset="utf-8"></script>
+
+    <script src="main.js" charset="utf-8"></script>
 </body>
+
 </html>

@@ -1,11 +1,11 @@
-(function () {
+(function() {
 
-    function boot () {
+    function boot() {
 
         var settings = window._CCSettings;
         window._CCSettings = undefined;
 
-        if ( !settings.debug ) {
+        if (!settings.debug) {
             var uuids = settings.uuids;
 
             var rawAssets = settings.rawAssets;
@@ -62,25 +62,41 @@
             initAdapter();
         }
 
-        function setLoadingDisplay () {
+        function setLoadingDisplay() {
             // Loading splash scene
             var splash = document.getElementById('splash');
             var progressBar = splash.querySelector('.progress-bar span');
-            cc.loader.onProgress = function (completedCount, totalCount, item) {
+            var img = splash.querySelector('.progress-bar img');
+            cc.loader.onProgress = function(completedCount, totalCount, item) {
                 var percent = 100 * completedCount / totalCount;
                 if (progressBar) {
                     progressBar.style.width = percent.toFixed(2) + '%';
+                    img.style.left = percent.toFixed(2) + '%';
                 }
             };
             splash.style.display = 'block';
             progressBar.style.width = '0%';
 
-            cc.director.once(cc.Director.EVENT_AFTER_SCENE_LAUNCH, function () {
-                splash.style.display = 'none';
+            cc.director.once(cc.Director.EVENT_AFTER_SCENE_LAUNCH, function() {
+                cc.log('done')
+                var start = document.getElementById("start-game")
+                var loading = document.getElementById("loading")
+
+                loading.style.opacity = '0'
+                start.style.opacity = '1'
+
+                var startGame = function() {
+                    splash.classList.add("slide-in")
+                    setTimeout(function() {
+                        splash.style.display = 'none';
+                    }, 1200);
+                }
+                start.addEventListener("click", startGame, false)
+                start.addEventListener("touchend", startGame, false)
             });
         }
 
-        var onStart = function () {
+        var onStart = function() {
             if (false) {
                 BK.Script.loadlib();
             }
@@ -99,8 +115,7 @@
                 if (cc.sys.isMobile) {
                     if (settings.orientation === 'landscape') {
                         cc.view.setOrientation(cc.macro.ORIENTATION_LANDSCAPE);
-                    }
-                    else if (settings.orientation === 'portrait') {
+                    } else if (settings.orientation === 'portrait') {
                         cc.view.setOrientation(cc.macro.ORIENTATION_PORTRAIT);
                     }
                     cc.view.enableAutoFullScreen([
@@ -136,7 +151,7 @@
 
             // load scene
             cc.director.loadScene(launchScene, null,
-                function () {
+                function() {
                     if (cc.sys.isBrowser) {
                         // show canvas
                         canvas.style.visibility = '';
@@ -157,12 +172,11 @@
         if (!false) {
             var bundledScript = settings.debug ? 'src/project.dev.js' : 'src/project.js';
             if (jsList) {
-                jsList = jsList.map(function (x) {
+                jsList = jsList.map(function(x) {
                     return 'src/' + x;
                 });
                 jsList.push(bundledScript);
-            }
-            else {
+            } else {
                 jsList = [bundledScript];
             }
         }
@@ -226,7 +240,7 @@
         cocos2d.async = true;
         cocos2d.src = window._CCSettings.debug ? 'cocos2d-js.js' : 'cocos2d-js-min.js';
 
-        var engineLoaded = function () {
+        var engineLoaded = function() {
             document.body.removeChild(cocos2d);
             cocos2d.removeEventListener('load', engineLoaded, false);
             window.eruda && eruda.init() && eruda.get('console').config.set('displayUnenumerable', false);
