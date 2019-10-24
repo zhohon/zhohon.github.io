@@ -193,7 +193,7 @@
 
     document.fonts.load(font)
     .then(function() {
-        document.getElementById('text').addEventListener('keyup', function() {
+        document.getElementById('text').addEventListener('input', function() {
         imageElem.src = ''
         canvas.style.display=""
         var canvas1 = document.getElementById('1');
