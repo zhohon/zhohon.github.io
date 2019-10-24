@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="minimum-scale=1, initial-scale=0.8, width=device-width, shrink-to-fit=no,user-scalable=no">
+    <meta charSet="utf-8" />
+    <title class="jsx-3638890308">红叶: Nokia message generator</title>
+    <meta name="next-head-count" content="4" />
+    <style id="__jsx-3638890308">
+        body {
+            width: 100%;
+            margin: 0;
+            font-family: "Roboto", Arial, sans-serif;
+            padding-top: 30px;
+            padding-bottom: 40px;
+            background: #f5efef;
+        }
+
+        .generate-box {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .generate {
+            background: transparent;
+            color: rgba(0, 0, 0, 0.55);
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        .generate {
+            border: 1px solid #0288d1;
+        }
+
+        .generate:hover {
+            background: #0288d1;
+            color: white;
+        }
+
+        .image-box {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .image {
+            height: 500px;
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        .github {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        button {
+            cursor: pointer;
+            outline: none;
+            border: none;
+        }
+
+        * {
+            box-sizing: inherit;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 0 100px;
+        }
+
+        .title {
+            font-size: 1.7rem;
+            color: #666666;
+        }
+
+        .desc {
+            font-size: 0.9rem;
+            color: #9bc788;
+        }
+
+        .tool {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+        }
+
+        .tool .text {
+            border: none;
+            width: 100%;
+            background: #fefefe;
+            border-radius: 40px;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            outline: none;
+            font-size: 13px;
+            color: #5a6674;
+            padding: 10px 15px;
+        }
+
+        .input {
+            position: relative;
+            width: 300px;
+            height: 38px;
+            margin: 0 auto;
+        }
+
+        .input #visit {
+            position: absolute;
+            right: 0;
+            height: 50px;
+            width: 50px;
+            top: -7px;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .visit>svg {
+            height: 100%;
+            width: 100%;
+            fill: #e57373;
+        }
+
+        .visit:hover {
+            -webkit-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+        @media screen and (max-width:768px) {
+            .container {
+                padding: 0;
+                width: 100%;
+            }
+            .image {
+                width: 30%;
+                height: auto;
+            }
+        }
+
+        .text-c {
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+    <div id="__next">
+        <div class="jsx-3638890308 container">
+            <div class="jsx-3638890308 tool">
+                <h1 class="jsx-3638890308 title">节日快乐</h1>
+                <h2 class="jsx-3638890308 desc">诺基亚短信图片生成器</h2>
+                <h2 class="jsx-3638890308 desc">实时预览,点击生成后,可长按图片保存</h2>
+                <div class="jsx-3638890308 input"><textarea id='text' placeholder="输入您想生成的短信文字, 可换行" value="" class="jsx-3638890308 text"></textarea></div>
+                <div class="jsx-3638890308 generate-box"><button onclick="a()" class="jsx-3638890308 generate">生成</button></div>
+            </div>
+            <div class="jsx-3638890308 image-box"><img src="./logo.jpg" alt="zzkia" class="jsx-3638890308 image" /></div>
+            <div style="width:100%">
+                <canvas id="viewport" width="375px" height="779px" style="width:100%"></canvas>
+
+            </div>
+            <canvas id="1" class="text-c" width="375px" height="293px" style="width:100%">></canvas>
+            <img id='image'>
+
+            <script id="jsbin-javascript">
+
+    var canvas = document.getElementById('viewport');
+    var context = canvas.getContext('2d');
+    var imageObj = new Image();
+    var image = new Image();
+
+
+    imageObj.onload = function() {
+      context.drawImage(imageObj, 0, 0, 375,779);
+    };
+    imageObj.src = './2.jpg';
+
+    imageElem = document.getElementById('image');
+
+    var font = '500 32px Times New Roman';
+
+    document.fonts.load(font)
+    .then(function() {
+        document.getElementById('text').addEventListener('keyup', function() {
+        imageElem.src = ''
+        canvas.style.display=""
+        var canvas1 = document.getElementById('1');
+        var context1 = canvas1.getContext('2d');
+        context1.clearRect(0,0,375,293)
+        context1.font = font
+        context.drawImage(imageObj, 0, 0, 375,779);
+
+        context1.fillStyle = 'rgba(30,41,16,0.9)';
+        
+        var lines = this.value.split('\n');
+        for (var i = 0; i<lines.length; i++)
+        context1.fillText(lines[i], 0, 59 + (i*37) );
+
+        image.src = context1.canvas.toDataURL();
+        image.onload = function() {
+        context.drawImage(image, 36, 176, 375,293);
+        }
+        }, false);
+    });
+    function a() {
+        console.log('12')
+        imageElem.src = context.canvas.toDataURL();
+        canvas.style.display="none"
+    }
+
+
+</script>
+        </div>
+</body>
+
+</html>
